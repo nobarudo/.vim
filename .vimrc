@@ -70,3 +70,13 @@ set history=10000
 cmap w!! w !sudo tee > /dev/null %
 " 入力モード中に素早くJJと入力した場合はESCとみなす
 inoremap jj <Esc>
+set cursorline
+"タイプ中のコマンドを表示
+set showcmd
+
+inoremap { {}<left>
+inoremap [ []<left>
+inoremap ( ()<left>
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap < <><left>
