@@ -66,17 +66,20 @@ set incsearch
 " コマンド、検索パターンを10000個まで履歴に残す
 set history=10000
 
-" w!! でスーパーユーザーとして保存（sudoが使える環境限定）
-cmap w!! w !sudo tee > /dev/null %
-" 入力モード中に素早くJJと入力した場合はESCとみなす
-inoremap jj <Esc>
 set cursorline
 "タイプ中のコマンドを表示
 set showcmd
 
+
+" w!! でスーパーユーザーとして保存（sudoが使える環境限定）
+cmap w!! w !sudo tee > /dev/null %
+" 入力モード中に素早くJJと入力した場合はESCとみなす
+inoremap jj <Esc>
 inoremap { {}<left>
 inoremap [ []<left>
 inoremap ( ()<left>
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap < <><left>
+
+set visualbell
