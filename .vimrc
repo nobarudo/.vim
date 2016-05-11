@@ -70,7 +70,6 @@ set cursorline
 "タイプ中のコマンドを表示
 set showcmd
 
-
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 cmap w!! w !sudo tee > /dev/null %
 " 入力モード中に素早くJJと入力した場合はESCとみなす
@@ -83,3 +82,38 @@ inoremap ' ''<left>
 inoremap < <><left>
 
 set visualbell
+
+"----plugin
+
+
+filetype plugin indent off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+
+call neobundle#begin(expand('~/.vim/bundle'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'MaxMEllon/molokai'
+
+call neobundle#end()
+
+filetype plugin indent on
+
+" カラースキーマの設定--------------------------------------------------
+
+filetype indent on
+syntax on
+
+" 色の設定(syntax onのあと) molokai
+set t_Co=256
+try
+  colorscheme molokai
+  let g:molokai_original = 1
+catch
+  colorscheme desert
+endtry
