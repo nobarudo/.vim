@@ -83,8 +83,7 @@ inoremap < <><left>
 
 set visualbell
 
-"----plugin
-
+"plugin----------------------------------------------------------------
 
 filetype plugin indent off
 
@@ -96,14 +95,18 @@ call neobundle#begin(expand('~/.vim/bundle'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'MaxMEllon/molokai'
+"htmlのシンタックスファイル
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'taichouchou2/html5.vim'
+"JSのシンタックスファイル
+NeoBundle 'mattn/jscomplete-vim'
+
 
 call neobundle#end()
 
 filetype plugin indent on
-
+NeoBundleCheck
 " カラースキーマの設定--------------------------------------------------
 
 filetype indent on
