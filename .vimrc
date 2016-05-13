@@ -71,6 +71,12 @@ set history=10000
 set cursorline
 "タイプ中のコマンドを表示
 set showcmd
+set expandtab     " タブ入力を複数の空白入力に置き換える
+set tabstop=2     " 画面上でタブ文字が占める幅
+set shiftwidth=2  " 自動インデントでずれる幅
+set softtabstop=2 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set autoindent    " 改行時に前の行のインデントを継続
+set smartindent   " 改行時に入力された行の末尾に合わせて次の行のインデントを増減
 
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 cmap w!! w !sudo tee > /dev/null %
@@ -106,9 +112,16 @@ NeoBundle 'mattn/jscomplete-vim'
 
 NeoBundle 'itchyny/lightline.vim'
 
+NeoBundle 'Yggdroot/indentLine'
+let g:indentLine_faster = 1
+nmap <silent><Leader>i :<C-u>IndentLinesToggle<CR>
+let g:indentLine_color_term = 111
+let g:indentLine_color_gui = '#708090'
+let g:indentLine_char = '¦'
+
 let g:lightline = {
-      \ 'colorscheme': 'default',
-      \ }
+  \ 'colorscheme': 'default',
+\ }
 set laststatus=2
 set noshowmode
 
