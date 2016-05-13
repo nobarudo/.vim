@@ -96,6 +96,10 @@ inoremap < <><left>
 
 set visualbell
 
+"insert mode-----------------------------------------------------------
+
+inoremap <silent> <C-l> <right>
+
 "plugin----------------------------------------------------------------
 
 filetype plugin indent off
@@ -115,6 +119,7 @@ NeoBundle 'taichouchou2/html5.vim'
 "JSのシンタックスファイル
 NeoBundle 'mattn/jscomplete-vim'
 
+"indentLine----
 NeoBundle 'Yggdroot/indentLine'
 let g:indentLine_faster = 1
 nmap <silent><Leader>i :<C-u>IndentLinesToggle<CR>
@@ -122,6 +127,7 @@ let g:indentLine_color_term = 111
 let g:indentLine_color_gui = '#708090'
 let g:indentLine_char = '¦'
 
+"lightline----
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 let g:lightline = {
