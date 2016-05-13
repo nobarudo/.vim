@@ -67,9 +67,14 @@ set incsearch
 :set hlsearch
 " コマンド、検索パターンを10000個まで履歴に残す
 set history=10000
+" <F11>でpaste, nopasteを切り替え
+set pastetoggle=<F11>
+" bufferが変更されているとき，エラーでなく，保存するかを確認
+set confirm
 
-set cursorline
-"タイプ中のコマンドを表示
+set cursorline    " タイプ中のコマンドを表示
+
+" indent
 set showcmd
 set expandtab     " タブ入力を複数の空白入力に置き換える
 set tabstop=2     " 画面上でタブ文字が占める幅
@@ -142,3 +147,4 @@ try
 catch
   colorscheme desert
 endtry
+
