@@ -27,6 +27,8 @@ set clipboard=unnamed
 set list
 " 行番号を表示
 set number
+" 行番号を相対表示
+set relativenumber
 " 右下に表示される行・列の番号を表示する
 set ruler
 " compatibleオプションをオフにする
@@ -102,6 +104,13 @@ NeoBundle 'taichouchou2/html5.vim'
 "JSのシンタックスファイル
 NeoBundle 'mattn/jscomplete-vim'
 
+NeoBundle 'itchyny/lightline.vim'
+
+let g:lightline = {
+      \ 'colorscheme': 'default',
+      \ }
+set laststatus=2
+set noshowmode
 
 call neobundle#end()
 
