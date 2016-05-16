@@ -119,6 +119,8 @@ NeoBundle 'taichouchou2/html5.vim'
 "JSのシンタックスファイル
 NeoBundle 'mattn/jscomplete-vim'
 
+NeoBundle 'tpope/vim-surround'
+
 "indentLine----
 NeoBundle 'Yggdroot/indentLine'
 let g:indentLine_faster = 1
