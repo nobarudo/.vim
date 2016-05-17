@@ -71,8 +71,8 @@ set history=10000
 set pastetoggle=<F11>
 " bufferが変更されているとき，エラーでなく，保存するかを確認
 set confirm
-
-set cursorline    " タイプ中のコマンドを表示
+" タイプ中のコマンドを表示
+set cursorline
 
 " indent
 set showcmd
@@ -120,6 +120,9 @@ NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'mattn/jscomplete-vim'
 
 NeoBundle 'tpope/vim-surround'
+
+"行末の半角スペースの可視化
+NeoBundle 'bronson/vim-trailing-whitespace'
 
 "indentLine----
 NeoBundle 'Yggdroot/indentLine'
