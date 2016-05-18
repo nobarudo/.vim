@@ -120,6 +120,8 @@ NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'mattn/jscomplete-vim'
 
 NeoBundle 'tpope/vim-surround'
+"コメントのON/OFF
+NeoBundle 'tomtom/tcomment_vim'
 
 "行末の半角スペースの可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
