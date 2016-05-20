@@ -73,6 +73,12 @@ set pastetoggle=<F11>
 set confirm
 " タイプ中のコマンドを表示
 set cursorline
+set wildmenu
+
+set completeopt=menuone
+for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
+  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
+endfor
 
 " indent
 set showcmd
