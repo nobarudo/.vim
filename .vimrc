@@ -125,6 +125,8 @@ NeoBundle 'taichouchou2/html5.vim'
 "JSのシンタックスファイル
 NeoBundle 'mattn/jscomplete-vim'
 
+NeoBundle 'scrooloose/nerdtree'
+
 NeoBundle 'tpope/vim-surround'
 "コメントのON/OFF
 NeoBundle 'tomtom/tcomment_vim'
