@@ -105,6 +105,8 @@ set visualbell
 "insert mode-----------------------------------------------------------
 
 inoremap <silent> <C-l> <right>
+inoremap <silent> <C-h> <C-g>u<C-h>
+inoremap <silent> <C-d> <DEL>
 
 "plugin----------------------------------------------------------------
 
