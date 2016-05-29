@@ -125,7 +125,7 @@ NeoBundle 'MaxMEllon/molokai'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 "JSのシンタックスファイル
-NeoBundle 'mattn/jscomplete-vim'
+NeoBundle 'jelera/vim-javascript-syntax'
 
 NeoBundle 'scrooloose/nerdtree'
 
