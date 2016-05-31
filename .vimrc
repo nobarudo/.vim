@@ -80,6 +80,8 @@ for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
   exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
 endfor
 
+autocmd BufRead,BufNewFile *.json setfiletype javascript
+
 " indent
 set showcmd
 set expandtab     " タブ入力を複数の空白入力に置き換える
