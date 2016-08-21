@@ -94,7 +94,6 @@ set smartindent   " 改行時に入力された行の末尾に合わせて次の
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 cmap w!! w !sudo tee > /dev/null %
 " 入力モード中に素早くJJと入力した場合はESCとみなす
-inoremap jj <Esc>
 inoremap { {}<left>
 inoremap [ []<left>
 inoremap ( ()<left>
@@ -106,6 +105,8 @@ set visualbell
 
 "insert mode-----------------------------------------------------------
 
+inoremap jj <Esc>
+inoremap <silent> <C-j> j
 inoremap <silent> <C-l> <right>
 inoremap <silent> <C-h> <C-g>u<C-h>
 inoremap <silent> <C-d> <DEL>
