@@ -94,12 +94,12 @@ set smartindent   " 改行時に入力された行の末尾に合わせて次の
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 cmap w!! w !sudo tee > /dev/null %
 " 入力モード中に素早くJJと入力した場合はESCとみなす
-inoremap { {}<left>
-inoremap [ []<left>
-inoremap ( ()<left>
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap < <><left>
+"inoremap { {}<left>
+"inoremap [ []<left>
+"inoremap ( ()<left>
+"inoremap " ""<left>
+"inoremap ' ''<left>
+"inoremap < <><left>
 
 set visualbell
 
@@ -124,6 +124,9 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'MaxMEllon/molokai'
+NeoBundle 'cocopon/iceberg.vim'
+NeoBundle 'stulzer/heroku-colorscheme'
+
 "htmlのシンタックスファイル
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
@@ -179,7 +182,7 @@ syntax on
 " 色の設定(syntax onのあと) molokai
 set t_Co=256
 try
-  colorscheme molokai
+  colorscheme heroku-terminal
   let g:molokai_original = 1
 catch
   colorscheme desert
