@@ -9,6 +9,8 @@ set encoding=utf8
 set fileencoding=utf-8
 " スクロールする時に下が見えるようにする
 set scrolloff=5
+" 行頭と行末の左右移動で行をまたぐ
+set whichwrap=b,s,h,l,<,>,[,]
 " .swapファイルを作らない
 set noswapfile
 " バックアップファイルを作らない
@@ -46,7 +48,7 @@ set wrap
 " 入力されているテキストの最大幅を無効にする
 set textwidth=0
 " 不可視文字を表示
-set listchars=tab:≫-,trail:-,extends:≫,precedes:≪,nbsp:%,eol:$
+set listchars=tab:≫-,trail:-,extends:≫,precedes:≪,nbsp:%
 " インデントをshiftwidthの倍数に丸める
 set shiftround
 " 補完の際の大文字小文字の区別しない
@@ -57,6 +59,8 @@ set infercase
 set hidden
 " 新しく開く代わりにすでに開いてあるバッファを開く
 set switchbuf=useopen
+" ファイルが外部で変更された際に自動で読込
+set autoread
 " 小文字の検索でも大文字も見つかるようにする
 set ignorecase
 " ただし大文字も含めた検索の場合はその通りに検索する
@@ -64,7 +68,9 @@ set smartcase
 " インクリメンタルサーチを行う
 set incsearch
 " 検索結果をハイライト表示
-:set hlsearch
+set hlsearch
+" 検索時に最後まで移動したら最初に戻る
+set wrapscan
 " コマンド、検索パターンを10000個まで履歴に残す
 set history=10000
 " <F11>でpaste, nopasteを切り替え
@@ -105,11 +111,12 @@ set visualbell
 
 "insert mode-----------------------------------------------------------
 
-inoremap jj <Esc>
+inoremap <silent> jj <Esc>
 inoremap <silent> <C-j> j
 inoremap <silent> <C-l> <right>
 inoremap <silent> <C-h> <C-g>u<C-h>
 inoremap <silent> <C-d> <DEL>
+inoremap <silent> <C-o> <Esc>o
 
 "plugin----------------------------------------------------------------
 
@@ -123,6 +130,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+"カラースキーマ
 NeoBundle 'MaxMEllon/molokai'
 NeoBundle 'cocopon/iceberg.vim'
 NeoBundle 'stulzer/heroku-colorscheme'
@@ -179,7 +187,6 @@ NeoBundleCheck
 filetype indent on
 syntax on
 
-" 色の設定(syntax onのあと) molokai
 set t_Co=256
 try
   colorscheme heroku-terminal
