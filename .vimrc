@@ -42,7 +42,7 @@ set matchpairs& matchpairs+=<:>
 " 対応括弧をハイライト表示する
 set showmatch
 " 対応括弧の表示秒数を3秒にする
-set matchtime=3
+set matchtime=1
 " ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
 set wrap
 " 入力されているテキストの最大幅を無効にする
@@ -87,6 +87,12 @@ for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
 endfor
 
 autocmd BufRead,BufNewFile *.json setfiletype javascript
+"改行時に自動でコメントアウトを挿入しない
+augroup auto_comment_off
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=r
+  autocmd BufEnter * setlocal formatoptions-=o
+augroup END
 
 " indent
 set showcmd
@@ -99,24 +105,25 @@ set smartindent   " 改行時に入力された行の末尾に合わせて次の
 
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 cmap w!! w !sudo tee > /dev/null %
-" 入力モード中に素早くJJと入力した場合はESCとみなす
-"inoremap { {}<left>
-"inoremap [ []<left>
-"inoremap ( ()<left>
-"inoremap " ""<left>
-"inoremap ' ''<left>
-"inoremap < <><left>
 
 set visualbell
 
 "insert mode-----------------------------------------------------------
 
+" 入力モード中に素早くJJと入力した場合はESCとみなす
 inoremap <silent> jj <Esc>
 inoremap <silent> <C-j> j
 inoremap <silent> <C-l> <right>
 inoremap <silent> <C-h> <C-g>u<C-h>
 inoremap <silent> <C-d> <DEL>
 inoremap <silent> <C-o> <Esc>o
+
+"inoremap { {}<left>
+"inoremap [ []<left>
+"inoremap ( ()<left>
+"inoremap " ""<left>
+"inoremap ' ''<left>
+"inoremap < <><left>
 
 "plugin----------------------------------------------------------------
 
