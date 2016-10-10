@@ -69,6 +69,8 @@ set smartcase
 set incsearch
 " 検索結果をハイライト表示
 set hlsearch
+"ESCを二回押すことでハイライトを消す
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " 検索時に最後まで移動したら最初に戻る
 set wrapscan
 " コマンド、検索パターンを10000個まで履歴に残す
