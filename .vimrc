@@ -142,11 +142,13 @@ NeoBundle 'MaxMEllon/molokai'
 NeoBundle 'cocopon/iceberg.vim'
 NeoBundle 'stulzer/heroku-colorscheme'
 
+"シンタックス
 "htmlのシンタックスファイル
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 "JSのシンタックスファイル
 NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'slim-template/vim-slim'
 
 NeoBundle 'scrooloose/nerdtree'
 
@@ -159,7 +161,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 
 "indentLine----
 NeoBundle 'Yggdroot/indentLine'
-let g:indentLine_faster = 1
+"let g:indentLine_faster = 1
 nmap <silent><Leader>i :<C-u>IndentLinesToggle<CR>
 let g:indentLine_color_term = 111
 let g:indentLine_color_gui = '#708090'
@@ -196,7 +198,7 @@ syntax on
 
 set t_Co=256
 try
-  colorscheme heroku-terminal
+  colorscheme iceberg
   let g:molokai_original = 1
 catch
   colorscheme desert
