@@ -147,9 +147,10 @@ NeoBundle 'stulzer/heroku-colorscheme'
 "シンタックス
 "htmlのシンタックスファイル
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'taichouchou2/html5.vim'
+"NeoBundle 'taichouchou2/html5.vim'
+
 "JSのシンタックスファイル
-NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'slim-template/vim-slim'
 
 NeoBundle 'scrooloose/nerdtree'
@@ -160,6 +161,28 @@ NeoBundle 'tomtom/tcomment_vim'
 
 "行末の半角スペースの可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
+
+NeoBundle 'mattn/emmet-vim'
+
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 "indentLine----
 NeoBundle 'Yggdroot/indentLine'
