@@ -143,6 +143,8 @@ NeoBundle 'MaxMEllon/molokai'
 NeoBundle 'cocopon/iceberg.vim'
 NeoBundle 'stulzer/heroku-colorscheme'
 
+NeoBundle 'osyo-manga/vim-anzu'
+
 "行末の半角スペースの可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
 
@@ -195,6 +197,16 @@ nmap <silent><Leader>i :<C-u>IndentLinesToggle<CR>
 let g:indentLine_color_term = 111
 let g:indentLine_color_gui = '#708090'
 let g:indentLine_char = '¦'
+
+"vim-anzu----
+" mapping
+nmap n <Plug>(anzu-n-with-echo)
+nmap N <Plug>(anzu-N-with-echo)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
+
+" statusline
+set statusline=%{anzu#search_status()}
 
 "lightline----
 NeoBundle 'itchyny/lightline.vim'
