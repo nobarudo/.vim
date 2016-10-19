@@ -1,6 +1,6 @@
+"set------------------------------------------------------------
 "vi 互換ではなくVim のデフォルト設定にする
 set nocompatible
-" 環境設定系
 " シンタックスハイライト
 syntax on
 " エンコード
@@ -96,7 +96,7 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-" indent
+" indent----
 set showcmd
 set expandtab     " タブ入力を複数の空白入力に置き換える
 set tabstop=2     " 画面上でタブ文字が占める幅
@@ -139,12 +139,23 @@ call neobundle#begin(expand('~/.vim/bundle'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-"カラースキーマ
 NeoBundle 'MaxMEllon/molokai'
 NeoBundle 'cocopon/iceberg.vim'
 NeoBundle 'stulzer/heroku-colorscheme'
 
-"シンタックス
+"行末の半角スペースの可視化
+NeoBundle 'bronson/vim-trailing-whitespace'
+
+"html記述の効率化
+NeoBundle 'mattn/emmet-vim'
+
+NeoBundle 'tpope/vim-surround'
+
+"syntastic----
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+
 "htmlのシンタックスファイル
 NeoBundle 'hail2u/vim-css3-syntax'
 "NeoBundle 'taichouchou2/html5.vim'
@@ -155,35 +166,28 @@ NeoBundle 'slim-template/vim-slim'
 
 NeoBundle 'scrooloose/nerdtree'
 
-NeoBundle 'tpope/vim-surround'
-"コメントのON/OFF
-NeoBundle 'tomtom/tcomment_vim'
-
-"行末の半角スペースの可視化
-NeoBundle 'bronson/vim-trailing-whitespace'
-
-NeoBundle 'mattn/emmet-vim'
-
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
+""スニペット----
+"NeoBundle 'Shougo/neocomplcache'
+"NeoBundle 'Shougo/neosnippet'
+"NeoBundle 'Shougo/neosnippet-snippets'
+"
+"let g:neocomplcache_enable_at_startup = 1
+"" Plugin key-mappings.
+"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"xmap <C-k>     <Plug>(neosnippet_expand_target)
+"
+"" SuperTab like snippets behavior.
+"imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+"smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"
+"" For conceal markers.
+"if has('conceal')
+"  set conceallevel=2 concealcursor=niv
+"endif
+"
+"NeoBundle 'marijnh/tern_for_vim'
+"
 "indentLine----
 NeoBundle 'Yggdroot/indentLine'
 "let g:indentLine_faster = 1
@@ -216,6 +220,7 @@ call neobundle#end()
 
 filetype plugin indent on
 NeoBundleCheck
+
 " カラースキーマの設定--------------------------------------------------
 
 filetype indent on
@@ -224,7 +229,6 @@ syntax on
 set t_Co=256
 try
   colorscheme iceberg
-  let g:molokai_original = 1
 catch
   colorscheme desert
 endtry
