@@ -143,15 +143,14 @@ NeoBundle 'MaxMEllon/molokai'
 NeoBundle 'cocopon/iceberg.vim'
 NeoBundle 'stulzer/heroku-colorscheme'
 
-NeoBundle 'osyo-manga/vim-anzu'
-
 "行末の半角スペースの可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
-
 "html記述の効率化
 NeoBundle 'mattn/emmet-vim'
-
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'osyo-manga/vim-anzu'
+NeoBundle 'tmhedberg/matchit'
+NeoBundle 't9md/vim-quickhl'
 
 "syntastic----
 NeoBundle 'scrooloose/syntastic'
@@ -168,28 +167,6 @@ NeoBundle 'slim-template/vim-slim'
 
 NeoBundle 'scrooloose/nerdtree'
 
-""スニペット----
-"NeoBundle 'Shougo/neocomplcache'
-"NeoBundle 'Shougo/neosnippet'
-"NeoBundle 'Shougo/neosnippet-snippets'
-"
-"let g:neocomplcache_enable_at_startup = 1
-"" Plugin key-mappings.
-"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"xmap <C-k>     <Plug>(neosnippet_expand_target)
-"
-"" SuperTab like snippets behavior.
-"imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-"smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-"" For conceal markers.
-"if has('conceal')
-"  set conceallevel=2 concealcursor=niv
-"endif
-"
-"NeoBundle 'marijnh/tern_for_vim'
-"
 "indentLine----
 NeoBundle 'Yggdroot/indentLine'
 "let g:indentLine_faster = 1
@@ -204,6 +181,12 @@ nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
+
+"vim-quickhl----
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
 
 " statusline
 set statusline=%{anzu#search_status()}
