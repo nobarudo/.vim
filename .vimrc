@@ -151,9 +151,10 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'osyo-manga/vim-anzu'
 NeoBundle 'tmhedberg/matchit'
 NeoBundle 't9md/vim-quickhl'
+NeoBundle 'junegunn/vim-easy-align'
 
 "syntastic----
-NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
@@ -190,6 +191,12 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 
 " statusline
 set statusline=%{anzu#search_status()}
+
+"vim-easy-align----
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 "lightline----
 NeoBundle 'itchyny/lightline.vim'
