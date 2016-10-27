@@ -152,11 +152,12 @@ NeoBundle 'osyo-manga/vim-anzu'
 NeoBundle 'tmhedberg/matchit'
 NeoBundle 't9md/vim-quickhl'
 NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'LeafCage/yankround.vim'
 
 "syntastic----
 "NeoBundle 'scrooloose/syntastic'
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
+"let g:syntastic_enable_signs=1
+"let g:syntastic_auto_loc_list=2
 
 "htmlのシンタックスファイル
 NeoBundle 'hail2u/vim-css3-syntax'
@@ -197,6 +198,13 @@ set statusline=%{anzu#search_status()}
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" yankround.vim----
+"" キーマップ
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
 
 "lightline----
 NeoBundle 'itchyny/lightline.vim'
