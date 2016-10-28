@@ -153,6 +153,7 @@ NeoBundle 'tmhedberg/matchit'
 NeoBundle 't9md/vim-quickhl'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'LeafCage/yankround.vim'
+NeoBundle 'haya14busa/incsearch.vim'
 
 "syntastic----
 "NeoBundle 'scrooloose/syntastic'
@@ -205,6 +206,11 @@ nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
+
+"incsearch.vim----
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 "lightline----
 NeoBundle 'itchyny/lightline.vim'
