@@ -142,6 +142,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'MaxMEllon/molokai'
 NeoBundle 'cocopon/iceberg.vim'
 NeoBundle 'stulzer/heroku-colorscheme'
+NeoBundle 'jacoborus/tender'
 
 "行末の半角スペースの可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
@@ -223,7 +224,7 @@ nmap N <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 let g:lightline = {
-      \ 'colorscheme': 'default',
+      \ 'colorscheme': 'tender',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
@@ -250,8 +251,9 @@ filetype indent on
 syntax on
 
 set t_Co=256
+set termguicolors
 try
-  colorscheme iceberg
+  colorscheme tender
 catch
   colorscheme desert
 endtry
