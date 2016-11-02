@@ -81,7 +81,7 @@ set pastetoggle=<F11>
 set confirm
 " タイプ中のコマンドを表示
 set cursorline
-set wildmenu
+set wildmenu wildmode=list:longest,full
 
 set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
@@ -155,6 +155,7 @@ NeoBundle 't9md/vim-quickhl'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'haya14busa/incsearch.vim'
+NeoBundle 'itchyny/vim-cursorword'
 
 "syntastic----
 "NeoBundle 'scrooloose/syntastic'
@@ -251,7 +252,7 @@ filetype indent on
 syntax on
 
 set t_Co=256
-set termguicolors
+"set termguicolors
 try
   colorscheme tender
 catch
