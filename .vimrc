@@ -155,7 +155,9 @@ NeoBundle 't9md/vim-quickhl'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'haya14busa/incsearch.vim'
-NeoBundle 'itchyny/vim-cursorword'
+"NeoBundle 'itchyny/vim-cursorword'
+NeoBundle 'Shougo/neocomplete.vim'
+let g:neocomplete#enable_at_startup = 1
 
 "syntastic----
 "NeoBundle 'scrooloose/syntastic'
