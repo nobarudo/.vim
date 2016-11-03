@@ -158,6 +158,7 @@ NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'Townk/vim-autoclose'
 "NeoBundle 'itchyny/vim-cursorword'
+NeoBundle 'kana/vim-niceblock'
 NeoBundle 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup = 1
 
