@@ -155,6 +155,8 @@ NeoBundle 't9md/vim-quickhl'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'haya14busa/incsearch.vim'
+NeoBundle 'rhysd/accelerated-jk'
+NeoBundle 'Townk/vim-autoclose'
 "NeoBundle 'itchyny/vim-cursorword'
 NeoBundle 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup = 1
@@ -222,6 +224,10 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 nmap n <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
 nmap N <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
+
+"accelerated-jk----
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
 
 "lightline----
 NeoBundle 'itchyny/lightline.vim'
