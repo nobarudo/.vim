@@ -23,8 +23,7 @@ set backspace=indent,eol,start
 set vb t_vb=
 set novisualbell
 " OSのクリップボードを使う
-set clipboard+=unnamed
-set clipboard=unnamed
+set clipboard=unnamed,autoselect
 " 不可視文字を表示
 set list
 " 行番号を表示
@@ -82,6 +81,7 @@ set confirm
 " タイプ中のコマンドを表示
 set cursorline
 set wildmenu wildmode=list:longest,full
+set mouse=a
 
 set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
@@ -261,6 +261,7 @@ filetype indent on
 syntax on
 
 set t_Co=256
+set background=dark
 "set termguicolors
 try
   colorscheme tender
