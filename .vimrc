@@ -81,7 +81,7 @@ set confirm
 " タイプ中のコマンドを表示
 set cursorline
 set wildmenu wildmode=list:longest,full
-set mouse=a
+"set mouse=a
 
 set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
@@ -159,8 +159,9 @@ NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'Townk/vim-autoclose'
 "NeoBundle 'itchyny/vim-cursorword'
 NeoBundle 'kana/vim-niceblock'
-NeoBundle 'Shougo/neocomplete.vim'
-let g:neocomplete#enable_at_startup = 1
+"NeoBundle 'Shougo/neocomplete.vim'
+"let g:neocomplete#enable_at_startup = 1
+NeoBundle 'osyo-manga/vim-over'
 
 "syntastic----
 "NeoBundle 'scrooloose/syntastic'
@@ -209,8 +210,12 @@ nmap ga <Plug>(EasyAlign)
 "" キーマップ
 nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
+let g:yankround_max_history = 10
+"let g:yankround_use_region_hl = 1
 
 "incsearch.vim----
 map /  <Plug>(incsearch-forward)
