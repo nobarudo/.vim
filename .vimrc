@@ -159,9 +159,8 @@ NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'Townk/vim-autoclose'
 "NeoBundle 'itchyny/vim-cursorword'
 NeoBundle 'kana/vim-niceblock'
-"NeoBundle 'Shougo/neocomplete.vim'
-"let g:neocomplete#enable_at_startup = 1
 NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'haya14busa/incsearch-fuzzy.vim'
 
 "syntastic----
 "NeoBundle 'scrooloose/syntastic'
@@ -230,6 +229,11 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 nmap n <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
 nmap N <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
+
+"incsearch-fuzzy.vim----
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
 
 "accelerated-jk----
 nmap j <Plug>(accelerated_jk_gj)
