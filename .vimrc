@@ -161,6 +161,7 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'kana/vim-niceblock'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'haya14busa/incsearch-fuzzy.vim'
+NeoBundle 'lilydjwg/colorizer'
 
 "syntastic----
 "NeoBundle 'scrooloose/syntastic'
