@@ -1,8 +1,6 @@
 "set------------------------------------------------------------
 "vi 互換ではなくVim のデフォルト設定にする
 set nocompatible
-" シンタックスハイライト
-syntax on
 " エンコード
 set encoding=utf8
 " ファイルエンコード
@@ -124,13 +122,6 @@ inoremap <silent> <C-h> <C-g>u<C-h>
 inoremap <silent> <C-d> <DEL>
 inoremap <silent> <C-o> <Esc>o
 
-"inoremap { {}<left>
-"inoremap [ []<left>
-"inoremap ( ()<left>
-"inoremap " ""<left>
-"inoremap ' ''<left>
-"inoremap < <><left>
-
 "plugin----------------------------------------------------------------
 
 filetype plugin indent off
@@ -201,9 +192,6 @@ nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
-
-" statusline
-set statusline=%{anzu#search_status()}
 
 "vim-easy-align----
 " Start interactive EasyAlign in visual mode (e.g. vipga)
