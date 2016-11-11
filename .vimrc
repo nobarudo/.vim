@@ -82,6 +82,10 @@ set confirm
 set cursorline
 set wildmenu wildmode=list:longest,full
 "set mouse=a
+"スクリプト実行中に画面を描画しない
+set lazyredraw
+"高速ターミナル接続
+set ttyfast
 
 set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
@@ -143,6 +147,7 @@ NeoBundle 'MaxMEllon/molokai'
 NeoBundle 'cocopon/iceberg.vim'
 NeoBundle 'stulzer/heroku-colorscheme'
 NeoBundle 'jacoborus/tender'
+NeoBundle 'w0ng/vim-hybrid'
 
 "行末の半角スペースの可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
