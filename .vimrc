@@ -139,6 +139,8 @@ NeoBundle 'cocopon/iceberg.vim'
 NeoBundle 'stulzer/heroku-colorscheme'
 NeoBundle 'jacoborus/tender'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'trusktr/seti.vim'
+NeoBundle 'xero/blaquemagick.vim'
 
 "行末の半角スペースの可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
