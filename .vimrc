@@ -8,7 +8,7 @@ set fileencoding=utf-8
 " スクロールする時に下が見えるようにする
 set scrolloff=5
 " 行頭と行末の左右移動で行をまたぐ
-set whichwrap=b,s,h,l,<,>,[,]
+set whichwrap=b,s,<,>,[,]
 " .swapファイルを作らない
 set noswapfile
 " バックアップファイルを作らない
@@ -160,12 +160,10 @@ NeoBundle 'kana/vim-niceblock'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'haya14busa/incsearch-fuzzy.vim'
 NeoBundle 'lilydjwg/colorizer'
+"NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-endwise'
 
 "syntastic----
-"NeoBundle 'scrooloose/syntastic'
-"let g:syntastic_enable_signs=1
-"let g:syntastic_auto_loc_list=2
-
 "htmlのシンタックスファイル
 NeoBundle 'hail2u/vim-css3-syntax'
 "NeoBundle 'taichouchou2/html5.vim'
@@ -173,8 +171,6 @@ NeoBundle 'hail2u/vim-css3-syntax'
 "JSのシンタックスファイル
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'slim-template/vim-slim'
-
-NeoBundle 'scrooloose/nerdtree'
 
 "indentLine----
 NeoBundle 'Yggdroot/indentLine'
