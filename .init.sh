@@ -1,6 +1,8 @@
 #!/bin/sh
 
-  mkdir ~/.vim/bundle
-  cd ~/.vim/bundle && git clone https://github.com/Shougo/neobundle.vim.git
+if ! [ -d autoload ]; then
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
 
-cd && ln -s .vim/.vimrc
+cd && ln -ivs .vim/.vimrc

@@ -124,56 +124,48 @@ inoremap <silent> <C-o> <Esc>o
 
 "plugin----------------------------------------------------------------
 
-filetype plugin indent off
+call plug#begin('~/.vim/plugged')
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-endif
-
-call neobundle#begin(expand('~/.vim/bundle'))
-
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'MaxMEllon/molokai'
-NeoBundle 'cocopon/iceberg.vim'
-NeoBundle 'stulzer/heroku-colorscheme'
-NeoBundle 'nobarudo/tender.vim'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'trusktr/seti.vim'
-NeoBundle 'xero/blaquemagick.vim'
+Plug 'MaxMEllon/molokai'
+Plug 'cocopon/iceberg.vim'
+Plug 'stulzer/heroku-colorscheme'
+Plug 'nobarudo/tender.vim'
+Plug 'w0ng/vim-hybrid'
+Plug 'trusktr/seti.vim'
+Plug 'xero/blaquemagick.vim'
 
 "行末の半角スペースの可視化
-NeoBundle 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 "html記述の効率化
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'osyo-manga/vim-anzu'
-NeoBundle 'tmhedberg/matchit'
-NeoBundle 't9md/vim-quickhl'
-NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'LeafCage/yankround.vim'
-NeoBundle 'haya14busa/incsearch.vim'
-NeoBundle 'rhysd/accelerated-jk'
-NeoBundle 'Townk/vim-autoclose'
-"NeoBundle 'itchyny/vim-cursorword'
-NeoBundle 'kana/vim-niceblock'
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'haya14busa/incsearch-fuzzy.vim'
-NeoBundle 'lilydjwg/colorizer'
-"NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-endwise'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+Plug 'osyo-manga/vim-anzu'
+Plug 'tmhedberg/matchit'
+Plug 't9md/vim-quickhl'
+Plug 'junegunn/vim-easy-align'
+Plug 'LeafCage/yankround.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'rhysd/accelerated-jk'
+Plug 'Townk/vim-autoclose'
+"Plug 'itchyny/vim-cursorword'
+Plug 'kana/vim-niceblock'
+Plug 'osyo-manga/vim-over'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'lilydjwg/colorizer'
+"Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-endwise'
 
 "syntastic----
 "htmlのシンタックスファイル
-NeoBundle 'hail2u/vim-css3-syntax'
-"NeoBundle 'taichouchou2/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
+"Plug 'taichouchou2/html5.vim'
 
 "JSのシンタックスファイル
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'slim-template/vim-slim'
+Plug 'pangloss/vim-javascript'
+Plug 'slim-template/vim-slim'
 
 "indentLine----
-NeoBundle 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 "let g:indentLine_faster = 1
 nmap <silent><Leader>i :<C-u>IndentLinesToggle<CR>
 let g:indentLine_color_term = 111
@@ -232,8 +224,8 @@ nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
 
 "lightline----
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
 let g:lightline = {
       \ 'colorscheme': 'tender',
       \ 'active': {
@@ -251,10 +243,7 @@ endfunction
 set laststatus=2
 set noshowmode
 
-call neobundle#end()
-
-filetype plugin indent on
-NeoBundleCheck
+call plug#end()
 
 " カラースキーマの設定--------------------------------------------------
 
