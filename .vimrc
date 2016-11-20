@@ -122,6 +122,10 @@ inoremap <silent> <C-h> <C-g>u<C-h>
 inoremap <silent> <C-d> <DEL>
 inoremap <silent> <C-o> <Esc>o
 
+"insert mode-----------------------------------------------------------
+
+noremap <S-l> $
+
 "plugin----------------------------------------------------------------
 
 call plug#begin('~/.vim/plugged')
@@ -137,7 +141,7 @@ Plug 'xero/blaquemagick.vim'
 "行末の半角スペースの可視化
 Plug 'bronson/vim-trailing-whitespace'
 "html記述の効率化
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'tpope/vim-surround'
 Plug 'osyo-manga/vim-anzu'
 Plug 'tmhedberg/matchit'
@@ -147,22 +151,22 @@ Plug 'LeafCage/yankround.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'rhysd/accelerated-jk'
 Plug 'Townk/vim-autoclose'
-"Plug 'itchyny/vim-cursorword'
 Plug 'kana/vim-niceblock'
 Plug 'osyo-manga/vim-over'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'lilydjwg/colorizer'
 "Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-endwise'
+Plug 'ruby-matchit'
 
 "syntastic----
 "htmlのシンタックスファイル
-Plug 'hail2u/vim-css3-syntax'
+"Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 "Plug 'taichouchou2/html5.vim'
 
 "JSのシンタックスファイル
-Plug 'pangloss/vim-javascript'
-Plug 'slim-template/vim-slim'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
 "indentLine----
 Plug 'Yggdroot/indentLine'
@@ -225,15 +229,12 @@ nmap k <Plug>(accelerated_jk_gk)
 
 "lightline----
 Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 let g:lightline = {
       \ 'colorscheme': 'tender',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'fugitive': 'LightLineFugitive',
+      \             [ 'readonly', 'filename', 'modified' ] ]
       \ },
       \ }
 function! LightLineFugitive()
