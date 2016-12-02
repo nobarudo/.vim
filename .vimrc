@@ -1,6 +1,4 @@
 "set------------------------------------------------------------
-"vi 互換ではなくVim のデフォルト設定にする
-set nocompatible
 " エンコード
 set encoding=utf8
 " ファイルエンコード
@@ -30,8 +28,6 @@ set number
 set relativenumber
 " 右下に表示される行・列の番号を表示する
 set ruler
-" compatibleオプションをオフにする
-set nocompatible
 " 移動コマンドを使ったとき、行頭に移動しない
 set nostartofline
 " 対応括弧に<と>のペアを追加
@@ -86,8 +82,8 @@ set lazyredraw
 set ttyfast
 
 set completeopt=menuone
-for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
-  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
+for s:k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
+  exec "imap <expr> " . s:k . " pumvisible() ? '" . s:k . "' : '" . s:k . "\<C-X>\<C-P>\<C-N>'"
 endfor
 
 autocmd BufRead,BufNewFile *.json setfiletype javascript
