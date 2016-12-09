@@ -122,6 +122,7 @@ inoremap <silent> <C-o> <Esc>o
 "normal mode----
 noremap <Space>l $
 noremap <Space>h ^
+nnoremap <Space><Space> *
 nnoremap j  gj
 nnoremap gj j
 nnoremap k  gk
@@ -163,7 +164,7 @@ Plug 'kana/vim-niceblock'
 Plug 'osyo-manga/vim-over'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'lilydjwg/colorizer'
-"Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle'] }
 Plug 'tpope/vim-endwise'
 Plug 'vim-scripts/ruby-matchit'
 Plug 'Yggdroot/indentLine'
@@ -258,6 +259,11 @@ endif
 if s:plug.is_installed("accelerated-jk")
   nmap j <Plug>(accelerated_jk_gj)
   nmap k <Plug>(accelerated_jk_gk)
+endif
+
+"nerdtree----
+if s:plug.is_installed("nerdtree")
+  nnoremap <silent><Space>n :NERDTreeToggle<CR>
 endif
 
 "lightline----
