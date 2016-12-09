@@ -1,4 +1,5 @@
 "set------------------------------------------------------------
+
 " エンコード
 set encoding=utf8
 " ファイルエンコード
@@ -108,19 +109,29 @@ cmap w!! w !sudo tee > /dev/null %
 
 set visualbell
 
-"insert mode-----------------------------------------------------------
+"mapping---------------------------------------------------------------
 
+"insert mode----
 " 入力モード中に素早くJJと入力した場合はESCとみなす
 inoremap <silent> jj <Esc>
 inoremap <silent> <C-j> j
 inoremap <silent> <C-l> <right>
-inoremap <silent> <C-h> <C-g>u<C-h>
 inoremap <silent> <C-d> <DEL>
 inoremap <silent> <C-o> <Esc>o
 
-"insert mode-----------------------------------------------------------
+"normal mode----
+noremap <Space>l $
+noremap <Space>h ^
+nnoremap j  gj
+nnoremap gj j
+nnoremap k  gk
+nnoremap gk k
 
-noremap <S-l> $
+"visual mode----
+vnoremap j gj
+vnoremap gj j
+vnoremap k gk
+vnoremap gk k
 
 "plugin----------------------------------------------------------------
 
@@ -133,6 +144,7 @@ Plug 'nobarudo/tender.vim'
 Plug 'w0ng/vim-hybrid'
 Plug 'trusktr/seti.vim'
 Plug 'xero/blaquemagick.vim'
+Plug 'nobarudo/cloudy'
 
 "行末の半角スペースの可視化
 Plug 'bronson/vim-trailing-whitespace'
@@ -153,9 +165,11 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'lilydjwg/colorizer'
 "Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-endwise'
-Plug 'ruby-matchit'
+Plug 'vim-scripts/ruby-matchit'
+Plug 'Yggdroot/indentLine'
+Plug 'itchyny/lightline.vim'
 
-"syntastic----
+"syntax----
 "htmlのシンタックスファイル
 "Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 "Plug 'taichouchou2/html5.vim'
@@ -164,67 +178,89 @@ Plug 'ruby-matchit'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
+let s:plug = {
+      \ "plugs": get(g:, 'plugs', {})
+      \ }
+
+function! s:plug.is_installed(name)
+  return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
+endfunction
+
 "indentLine----
-Plug 'Yggdroot/indentLine'
-"let g:indentLine_faster = 1
-nmap <silent><Leader>i :<C-u>IndentLinesToggle<CR>
-let g:indentLine_color_term = 111
-let g:indentLine_color_gui = '#708090'
-let g:indentLine_char = '¦'
+if s:plug.is_installed("indentLine")
+  "let g:indentLine_faster = 1
+  nmap <silent><Leader>i :<C-u>IndentLinesToggle<CR>
+  let g:indentLine_color_term = 111
+  let g:indentLine_color_gui = '#708090'
+  let g:indentLine_char = '¦'
+endif
 
 "vim-anzu----
-" mapping
-nmap * <Plug>(anzu-star-with-echo)
-nmap # <Plug>(anzu-sharp-with-echo)
+if s:plug.is_installed("vim-anzu")
+  " mapping
+  nmap * <Plug>(anzu-star-with-echo)
+  nmap # <Plug>(anzu-sharp-with-echo)
+endif
 
 "vim-quickhl----
-nmap <Space>m <Plug>(quickhl-manual-this)
-xmap <Space>m <Plug>(quickhl-manual-this)
-nmap <Space>M <Plug>(quickhl-manual-reset)
-xmap <Space>M <Plug>(quickhl-manual-reset)
+if s:plug.is_installed("vim-quickhl")
+  nmap <Space>m <Plug>(quickhl-manual-this)
+  xmap <Space>m <Plug>(quickhl-manual-this)
+  nmap <Space>M <Plug>(quickhl-manual-reset)
+  xmap <Space>M <Plug>(quickhl-manual-reset)
+endif
 
 "vim-easy-align----
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+if s:plug.is_installed("vim-easy-align")
+  " Start interactive EasyAlign in visual mode (e.g. vipga)
+  xmap ga <Plug>(EasyAlign)
+  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+  nmap ga <Plug>(EasyAlign)
+endif
 
 " yankround.vim----
 "" キーマップ
-nmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
-let g:yankround_max_history = 10
-"let g:yankround_use_region_hl = 1
+if s:plug.is_installed("yankround.vim")
+  nmap p <Plug>(yankround-p)
+  nmap P <Plug>(yankround-P)
+  nmap gp <Plug>(yankround-gp)
+  nmap gP <Plug>(yankround-gP)
+  nmap <C-p> <Plug>(yankround-prev)
+  nmap <C-n> <Plug>(yankround-next)
+  let g:yankround_max_history = 10
+  "let g:yankround_use_region_hl = 1
+endif
 
 "incsearch.vim----
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
-nmap n <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
-nmap N <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
+if s:plug.is_installed("incsearch.vim")
+  map /  <Plug>(incsearch-forward)
+  map ?  <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
+  let g:incsearch#auto_nohlsearch = 1
+  map n  <Plug>(incsearch-nohl-n)
+  map N  <Plug>(incsearch-nohl-N)
+  map *  <Plug>(incsearch-nohl-*)
+  map #  <Plug>(incsearch-nohl-#)
+  map g* <Plug>(incsearch-nohl-g*)
+  map g# <Plug>(incsearch-nohl-g#)
+  nmap n <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
+  nmap N <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
+endif
 
 "incsearch-fuzzy.vim----
-map z/ <Plug>(incsearch-fuzzy-/)
-map z? <Plug>(incsearch-fuzzy-?)
-map zg/ <Plug>(incsearch-fuzzy-stay)
+if s:plug.is_installed("incsearch-fuzzy.vim")
+  map z/ <Plug>(incsearch-fuzzy-/)
+  map z? <Plug>(incsearch-fuzzy-?)
+  map zg/ <Plug>(incsearch-fuzzy-stay)
+endif
 
 "accelerated-jk----
-nmap j <Plug>(accelerated_jk_gj)
-nmap k <Plug>(accelerated_jk_gk)
+if s:plug.is_installed("accelerated-jk")
+  nmap j <Plug>(accelerated_jk_gj)
+  nmap k <Plug>(accelerated_jk_gk)
+endif
 
 "lightline----
-Plug 'itchyny/lightline.vim'
 "Plug 'tpope/vim-fugitive'
 let g:lightline = {
       \ 'colorscheme': 'tender',
@@ -251,8 +287,7 @@ set t_Co=256
 set background=dark
 "set termguicolors
 try
-  colorscheme tender
+  colorscheme cloudy
 catch
   colorscheme desert
 endtry
-
