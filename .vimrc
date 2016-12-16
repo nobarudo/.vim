@@ -88,6 +88,7 @@ for s:k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
 endfor
 
 autocmd BufRead,BufNewFile *.json setfiletype javascript
+autocmd BufRead,BufNewFile,BufReadPre *.jade set filetype=pug
 "改行時に自動でコメントアウトを挿入しない
 augroup auto_comment_off
   autocmd!
@@ -178,6 +179,7 @@ Plug 'itchyny/lightline.vim'
 "JSのシンタックスファイル
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 
 let s:plug = {
       \ "plugs": get(g:, 'plugs', {})
@@ -293,7 +295,7 @@ set t_Co=256
 set background=dark
 "set termguicolors
 try
-  colorscheme cloudy
+  colorscheme tender
 catch
   colorscheme desert
 endtry
