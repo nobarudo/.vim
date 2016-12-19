@@ -183,6 +183,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'Shougo/neocomplcache'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'nobarudo/sumippet'
 
 "syntax----
 "htmlのシンタックスファイル
@@ -318,7 +319,7 @@ if s:plug.is_installed("neocomplcache")
 endif
 
 "snippets----
-if s:plug.is_installed("snippets")
+if s:plug.is_installed("neosnippet")
   "plugin key-mappings.
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
   smap <C-k>     <Plug>(neosnippet_expand_or_jump)
