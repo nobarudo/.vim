@@ -138,6 +138,7 @@ nnoremap j  gj
 nnoremap gj j
 nnoremap k  gk
 nnoremap gk k
+nnoremap <space>. :<c-u>tabedit $MYVIMRC<CR>
 
 "visual mode----
 vnoremap j gj
@@ -184,6 +185,7 @@ Plug 'Shougo/neocomplcache'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'nobarudo/sumippet'
+Plug 'bkad/CamelCaseMotion'
 
 "syntax----
 "htmlのシンタックスファイル
@@ -244,7 +246,7 @@ if s:plug.is_installed("yankround.vim")
   nmap gP <Plug>(yankround-gP)
   nmap <C-p> <Plug>(yankround-prev)
   nmap <C-n> <Plug>(yankround-next)
-  let g:yankround_max_history = 10
+  let g:yankround_max_history = 15
   "let g:yankround_use_region_hl = 1
 endif
 
@@ -335,6 +337,18 @@ if s:plug.is_installed("neosnippet")
   endif
 
   let g:neosnippet#snippets_directory='~/.vim/snippets'
+endif
+
+"CamelCaseMotion----
+if s:plug.is_installed("CamelCaseMotion")
+  map <silent> w <Plug>CamelCaseMotion_w
+  map <silent> b <Plug>CamelCaseMotion_b
+  map <silent> e <Plug>CamelCaseMotion_e
+  map <silent> ge <Plug>CamelCaseMotion_ge
+  sunmap w
+  sunmap b
+  sunmap e
+  sunmap ge
 endif
 
 "lightline----
