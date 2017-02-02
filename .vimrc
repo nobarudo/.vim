@@ -158,6 +158,8 @@ Plug 'w0ng/vim-hybrid'
 Plug 'trusktr/seti.vim'
 Plug 'xero/blaquemagick.vim'
 Plug 'nobarudo/cloudy'
+Plug 'AlessandroYorba/Sidonia'
+Plug 'AlessandroYorba/Monrovia'
 
 "行末の半角スペースの可視化
 Plug 'bronson/vim-trailing-whitespace'
@@ -167,13 +169,13 @@ Plug 'tpope/vim-surround'
 Plug 'osyo-manga/vim-anzu'
 Plug 'tmhedberg/matchit'
 Plug 't9md/vim-quickhl'
-Plug 'junegunn/vim-easy-align'
+"Plug 'junegunn/vim-easy-align'
 Plug 'LeafCage/yankround.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'rhysd/accelerated-jk'
 Plug 'Townk/vim-autoclose'
 Plug 'kana/vim-niceblock'
-Plug 'osyo-manga/vim-over'
+"Plug 'osyo-manga/vim-over'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle'] }
@@ -186,6 +188,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'nobarudo/sumippet'
 Plug 'bkad/CamelCaseMotion'
+Plug 'kshenoy/vim-signature'
 
 "syntax----
 "htmlのシンタックスファイル
@@ -229,13 +232,13 @@ if s:plug.is_installed("vim-quickhl")
   xmap <Space>M <Plug>(quickhl-manual-reset)
 endif
 
-"vim-easy-align----
-if s:plug.is_installed("vim-easy-align")
-  " Start interactive EasyAlign in visual mode (e.g. vipga)
-  xmap ga <Plug>(EasyAlign)
-  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-  nmap ga <Plug>(EasyAlign)
-endif
+""vim-easy-align----
+"if s:plug.is_installed("vim-easy-align")
+"  " Start interactive EasyAlign in visual mode (e.g. vipga)
+"  xmap ga <Plug>(EasyAlign)
+"  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+"  nmap ga <Plug>(EasyAlign)
+"endif
 
 " yankround.vim----
 "" キーマップ
