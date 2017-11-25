@@ -158,8 +158,8 @@ Plug 'w0ng/vim-hybrid'
 Plug 'trusktr/seti.vim'
 Plug 'xero/blaquemagick.vim'
 Plug 'nobarudo/cloudy'
-Plug 'AlessandroYorba/Sidonia'
-Plug 'AlessandroYorba/Monrovia'
+" Plug 'AlessandroYorba/Sidonia'
+" Plug 'AlessandroYorba/Monrovia'
 
 "行末の半角スペースの可視化
 Plug 'bronson/vim-trailing-whitespace'
@@ -189,6 +189,12 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'nobarudo/sumippet'
 Plug 'bkad/CamelCaseMotion'
 Plug 'kshenoy/vim-signature'
+"Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'google/vim-ft-go', { 'for': 'go' }
+Plug 'vim-jp/vim-go-extra', { 'for': 'go' }
+Plug 'tpope/vim-markdown'
+Plug 'kannokanno/previm'
+Plug 'tyru/open-browser.vim'
 
 "syntax----
 "htmlのシンタックスファイル
@@ -322,6 +328,12 @@ if s:plug.is_installed("neocomplcache")
   inoremap <expr><C-y>  neocomplcache#close_popup()
   inoremap <expr><C-e>  neocomplcache#cancel_popup()
 endif
+
+"previm----
+augroup PrevimSettings
+  autocmd!
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
 
 "snippets----
 if s:plug.is_installed("neosnippet")
