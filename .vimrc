@@ -106,6 +106,11 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
+augroup Indent
+  autocmd!
+  autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup END
+
 " indent----
 set showcmd
 set expandtab     " タブ入力を複数の空白入力に置き換える
