@@ -194,9 +194,9 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'nobarudo/sumippet'
 Plug 'bkad/CamelCaseMotion'
 Plug 'kshenoy/vim-signature'
-"Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'google/vim-ft-go', { 'for': 'go' }
-Plug 'vim-jp/vim-go-extra', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+"Plug 'google/vim-ft-go', { 'for': 'go' }
+"Plug 'vim-jp/vim-go-extra', { 'for': 'go' }
 Plug 'tpope/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
