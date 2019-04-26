@@ -163,8 +163,6 @@ Plug 'w0ng/vim-hybrid'
 Plug 'trusktr/seti.vim'
 Plug 'xero/blaquemagick.vim'
 Plug 'nobarudo/cloudy'
-" Plug 'AlessandroYorba/Sidonia'
-" Plug 'AlessandroYorba/Monrovia'
 
 "行末の半角スペースの可視化
 Plug 'bronson/vim-trailing-whitespace'
@@ -194,18 +192,15 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'nobarudo/sumippet'
 Plug 'bkad/CamelCaseMotion'
 Plug 'kshenoy/vim-signature'
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go'
 "Plug 'google/vim-ft-go', { 'for': 'go' }
 "Plug 'vim-jp/vim-go-extra', { 'for': 'go' }
 Plug 'tpope/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
+Plug 'simeji/winresizer'
 
 "syntax----
-"htmlのシンタックスファイル
-"Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-"Plug 'taichouchou2/html5.vim'
-
 "JSのシンタックスファイル
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
