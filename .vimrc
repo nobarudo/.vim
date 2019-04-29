@@ -199,6 +199,7 @@ Plug 'tpope/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'simeji/winresizer'
+Plug 'dhruvasagar/vim-table-mode'
 
 "syntax----
 "JSのシンタックスファイル
